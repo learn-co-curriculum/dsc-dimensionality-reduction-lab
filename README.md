@@ -420,7 +420,7 @@ print ("Time Taken:", end - start)
 ```
 
     Accuracy: 0.9666666666666667
-    Time Taken: -0.0021236399916233495
+    Time Taken: 0.0000236399916233495
 
 
 So we see that going from 4 actual dimensions to two derived dimensions. We manage to get an accuracy of 96%. There is some loss but considering big data domain with data possibly having thousands of features, this trade-off is often accepted in order to simplify and speed up computation. The time taken to run the classifer is much less than what we saw with complete dataset. 
