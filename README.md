@@ -1,13 +1,16 @@
 
-# Pinciple Component Analysis in Scikit-learn - Lab
+# Pincipal Component Analysis in scikit-learn - Lab
 
 ## Introduction
 
-PCA algorithm is generally applied in dimension reduction contexts with an option to visualize a complex high dimensional dataset in 2D or 3D. PCA can also do an amazing job towards removing the computational cost of other machine learning algorithms by allowing them to train on a reduced set of features (principle components)
+PCA algorithm is generally applied in dimension reduction contexts with an option to visualize a complex high dimensional dataset in 2D or 3D. PCA can also do an amazing job towards removing the computational cost of other machine learning algorithms by allowing them to train on a reduced set of features (principal components)
 In this lesson, we shall look into implementing PCA with `scikit-learn` to the popular iris dataset, in an attempt to reduce the number of dimensions from 4 to 2 and see if the reduced set of dimensions would still preserve the variance of complete dataset. 
 
 ## Objectives
-- Perform PCA in Python and sci-kit learn using Iris dataset
+
+You will be able to:
+
+- Perform PCA in Python and scikit-learn using Iris dataset
 - Measure the impact of PCA on the accuracy of classification algorithms
 - Plot the decision boundary of different classification experiments to visually inspect their performance. 
 
@@ -106,7 +109,7 @@ Perform following steps:
 
 
 
-So here we see a set of four input features i.e. four dimensions. Our goal for this simple analysis is to reduce this number to 2 (or 3) so that we can visualize the resulting principle components using the standard plotting techniques that we have learned so far in the course. 
+So here we see a set of four input features i.e. four dimensions. Our goal for this simple analysis is to reduce this number to 2 (or 3) so that we can visualize the resulting principal components using the standard plotting techniques that we have learned so far in the course. 
 
 ## Standardize the Data
 
@@ -210,11 +213,11 @@ Now we can take our feature set `X`  and standardize it using `StandardScalar` m
 
 ## PCA Projection to 2D Space
 
-We shall now project the original data which is 4 dimensional into 2 dimensions. Remember,  there usually isn’t a particular meaning assigned to each principal component. The new components are just the two main dimensions of variance present in the data. To perform `PCA` with sk-learn, we need to import it first and create an instance of PCA while defining the number of principle components. 
+We shall now project the original data which is 4 dimensional into 2 dimensions. Remember,  there usually isn’t a particular meaning assigned to each principal component. The new components are just the two main dimensions of variance present in the data. To perform `PCA` with sk-learn, we need to import it first and create an instance of PCA while defining the number of principal components. 
 
 - Initialize an instance of PCA from scikit-learn with 2 components
 - Fit the data to the model
-- Extract the first 2 principle components from the trained model
+- Extract the first 2 principal components from the trained model
 
 
 ```python
@@ -228,11 +231,11 @@ We shall now project the original data which is 4 dimensional into 2 dimensions.
 
 We can now save the results in a new dataframe and name the columns according the first/second component. 
 
-- Append the target (flower name) to the principle components in a pandas dataframe 
+- Append the target (flower name) to the principal components in a pandas dataframe 
 
 
 ```python
-# Create a new dataset fro principle components 
+# Create a new dataset fro principal components 
 
 
 # Your code here 
@@ -305,14 +308,14 @@ We can now save the results in a new dataframe and name the columns according th
 
 Great, we now have a set of two dimensions, reduced from four against our target variable, the flower name. Let's now try to visualize this dataset and see if the different flower species remain separable. 
 
-## Visualize Principle Components 
+## Visualize Principal Components 
 
-Using the target data, we can visualize the principle components according to the class distribution. 
-- Create a scatter plot from principle components while color coding the examples
+Using the target data, we can visualize the principal components according to the class distribution. 
+- Create a scatter plot from principal components while color coding the examples
 
 
 ```python
-# Principle Componets scatter plot
+# Principal Componets scatter plot
 
 
 # Your code here 
@@ -320,21 +323,17 @@ Using the target data, we can visualize the principle components according to th
 
 ```
 
-
-![png](index_files/index_16_0.png)
-
-
 ## Explained Variance
 
 > __The explained variance tells us how much information (variance) can be attributed to each of the principal components__
 
-We can see above that the three classes in the dataset remain well separable. iris-virginica and iris-versicolor could be better separated, but we have to remember that we just reduced the size of dimensions to half. the cost-performance trade-off is something that data scientists often have to come across. In order to get a better idea around how much variance of the original dataset is explained in principle components, we can use the attribute `explained_variance_ratio_`.
+We can see above that the three classes in the dataset remain well separable. iris-virginica and iris-versicolor could be better separated, but we have to remember that we just reduced the size of dimensions to half. the cost-performance trade-off is something that data scientists often have to come across. In order to get a better idea around how much variance of the original dataset is explained in principal components, we can use the attribute `explained_variance_ratio_`.
 
-- Check the explained variance of the two principle components using `explained_variance_ratio_`
+- Check the explained variance of the two principal components using `explained_variance_ratio_`
 
 
 ```python
-# Calculate the variance explained by priciple components
+# Calculate the variance explained by pricipal components
 
 
 # Your code here 
@@ -351,7 +350,7 @@ First two PCs contain 95.80% of the information. The first PC contains 72.77% of
 
 ## Compare Performance of an Classifier with PCA
 
-So our principle components above explained 95% of variance in the data. How much would it effect the accuracy of a classifier? The best way to answer this is with a simple classifier like `KNeighborsClassifier`. We can try to classify this dataset in its original form vs. principle components computed above. 
+So our principal components above explained 95% of variance in the data. How much would it effect the accuracy of a classifier? The best way to answer this is with a simple classifier like `KNeighborsClassifier`. We can try to classify this dataset in its original form vs. principal components computed above. 
 
 - Run a `KNeighborsClassifier` to classify the Iris dataset 
 - Use a trai/test split of 80/20
@@ -373,8 +372,8 @@ So our principle components above explained 95% of variance in the data. How muc
 
 Great , so we see that we are able to classify the data with 100% accuracy in the given time. Remember the time taken may different randomly based on the load on your cpu and number of processes running on your PC. 
 
-Now let's repeat the above process for dataset made from principle components 
-- Run a `KNeighborsClassifier` to classify the Iris dataset with principle components
+Now let's repeat the above process for dataset made from principal components 
+- Run a `KNeighborsClassifier` to classify the Iris dataset with principal components
 - Use a trai/test split of 80/20
 - For reproducability of results, set random state =9 for the split
 - Time the process for splitting, training and making prediction
@@ -399,11 +398,11 @@ So we see that going from 4 actual dimensions to two derived dimensions. We mana
 
 visualizing decision boundary is good way to develop the intuition around a classifier's performance with 2/3 dimensional data. We can do this often to point out the examples that may not get classified correctly. It also helps us get an insight into how a certain algorithm draws these boundaries i.e. the learning process of an algorithm. 
 
-- Draw the decision boundary for the classification with principle components (Optional - with complete dataset)
+- Draw the decision boundary for the classification with principal components (Optional - with complete dataset)
 
 
 ```python
-# Plot decision boundary using principle components 
+# Plot decision boundary using principal components 
 
 
 # Your code here 
@@ -436,7 +435,7 @@ from sklearn.svm import SVC
 from sklearn.grid_search import GridSearchCV
 ```
 
-- Use 3 principle components instead of two and re-run your experiment to see the impact on the accuracy. 
+- Use 3 principal components instead of two and re-run your experiment to see the impact on the accuracy. 
 
 ## Summary 
 
