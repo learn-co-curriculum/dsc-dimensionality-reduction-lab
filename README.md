@@ -349,8 +349,8 @@ As you should see, these first two principal components account for the vast maj
 Since the principal components explain 95% of the variance in the data, it is interesting to consider how a classifier trained on the compressed version would compare to one trained on the original dataset.
 
 - Run a `KNeighborsClassifier` to classify the Iris dataset 
-- Use a trai/test split of 80/20
-- For reproducability of results, set random state =9 for the split
+- Use a train/test split of 80/20
+- For reproducibility of results, set random state =9 for the split
 - Time the process for splitting, training and making prediction
 
 
@@ -384,8 +384,8 @@ Great , so you can see that we are able to classify the data with 100% accuracy 
 
 Now repeat the above process for dataset made from principal components 
 - Run a `KNeighborsClassifier` to classify the Iris dataset with principal components
-- Use a trai/test split of 80/20
-- For reproducability of results, set random state =9 for the split
+- Use a train/test split of 80/20
+- For reproducibility of results, set random state =9 for the split
 - Time the process for splitting, training and making prediction
 
 
