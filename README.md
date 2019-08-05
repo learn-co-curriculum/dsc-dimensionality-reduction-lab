@@ -235,7 +235,7 @@ As such, append the target (flower name) to the principal components in a pandas
 
 
 ```python
-# Create a new dataset fro principal components 
+# Create a new dataset from principal components 
 
 
 # Your code here 
@@ -319,9 +319,11 @@ Using the target data, we can visualize the principal components according to th
 
 
 # Your code here 
-
-
 ```
+
+
+![png](index_files/index_17_0.png)
+
 
 ## Explained Variance
 
@@ -395,10 +397,39 @@ While some accuracy is loss in this representation, the training time has vastly
 
 
 ```python
-  
+# Plot decision boundary using principal components 
+def decision_boundary(pred_func):
+    
+    #Set the boundary
+    x_min, x_max = X.iloc[:, 0].min() - 0.5, X.iloc[:, 0].max() + 0.5
+    y_min, y_max = X.iloc[:, 1].min() - 0.5, X.iloc[:, 1].max() + 0.5
+    h = 0.01
+    
+    # build meshgrid
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+    Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+
+    # plot the contour
+    plt.figure(figsize=(15,10))
+    plt.contourf(xx, yy, Z, cmap=plt.cm.afmhot)
+    plt.scatter(X.iloc[:, 0], X.iloc[:, 1], c=y, cmap=plt.cm.Spectral, marker='x')
+
+decision_boundary(lambda x: model.predict(x))
+
+plt.title("decision boundary")
 ```
 
-  
+
+
+
+    Text(0.5,1,'decision boundary')
+
+
+
+
+![png](index_files/index_27_1.png)
+
 
 ## Summary 
 
