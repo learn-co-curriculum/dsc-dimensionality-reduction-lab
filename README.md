@@ -20,15 +20,13 @@ To practice PCA, you'll take a look at the iris dataset. Run the cell below to l
 
 ```python
 # Load necessary libraries
-import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
-
-# loading dataset into Pandas DataFrame
-iris = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-                 , names=['sepal length','sepal width','petal length','petal width','target'])
-iris.head()
-
+from sklearn import datasets
+import pandas as pd
+ 
+iris = datasets.load_iris()
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+df['Target'] = iris.get('target')
+df.head()
 ```
 
 
@@ -52,11 +50,11 @@ iris.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal length</th>
-      <th>sepal width</th>
-      <th>petal length</th>
-      <th>petal width</th>
-      <th>target</th>
+      <th>sepal length (cm)</th>
+      <th>sepal width (cm)</th>
+      <th>petal length (cm)</th>
+      <th>petal width (cm)</th>
+      <th>Target</th>
     </tr>
   </thead>
   <tbody>
@@ -66,7 +64,7 @@ iris.head()
       <td>3.5</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -74,7 +72,7 @@ iris.head()
       <td>3.0</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -82,7 +80,7 @@ iris.head()
       <td>3.2</td>
       <td>1.3</td>
       <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -90,7 +88,7 @@ iris.head()
       <td>3.1</td>
       <td>1.5</td>
       <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -98,7 +96,7 @@ iris.head()
       <td>3.6</td>
       <td>1.4</td>
       <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -107,6 +105,18 @@ iris.head()
 
 
 In a minute, you'll perform PCA and visualize the datasets principle components. Before, its helpful to get a little more context regarding the data that you'll be working with. Run the cell below in order to visualize the pairwise feature plots. With this, notice how the target labels are easily separable by any one of the given features.
+
+
+```python
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+pd.plotting.scatter_matrix(df, figsize=(10,10));
+```
+
+
+![png](index_files/index_4_0.png)
+
 
   
 
@@ -221,7 +231,7 @@ As such, append the target (flower name) to the principal components in a pandas
 
 
 ```python
-# Create a new dataset fro principal components 
+# Create a new dataset from principal components 
 df = pd.DataFrame(data = principalComponents
              , columns = ['PC1', 'PC2'])
 result_df = pd.concat([df, iris[['target']]], axis = 1)
@@ -322,7 +332,7 @@ ax.grid()
 ```
 
 
-![png](index_files/index_16_0.png)
+![png](index_files/index_17_0.png)
 
 
 ## Explained Variance
@@ -349,8 +359,8 @@ As you should see, these first two principal components account for the vast maj
 Since the principal components explain 95% of the variance in the data, it is interesting to consider how a classifier trained on the compressed version would compare to one trained on the original dataset.
 
 - Run a `KNeighborsClassifier` to classify the Iris dataset 
-- Use a train/test split of 80/20
-- For reproducibility of results, set random state =9 for the split
+- Use a trai/test split of 80/20
+- For reproducability of results, set random state =9 for the split
 - Time the process for splitting, training and making prediction
 
 
@@ -384,8 +394,8 @@ Great , so you can see that we are able to classify the data with 100% accuracy 
 
 Now repeat the above process for dataset made from principal components 
 - Run a `KNeighborsClassifier` to classify the Iris dataset with principal components
-- Use a train/test split of 80/20
-- For reproducibility of results, set random state =9 for the split
+- Use a trai/test split of 80/20
+- For reproducability of results, set random state =9 for the split
 - Time the process for splitting, training and making prediction
 
 
@@ -447,10 +457,8 @@ plt.title("decision boundary")
 
 
 
-![png](index_files/index_26_1.png)
+![png](index_files/index_27_1.png)
 
-
-  
 
 ## Summary 
 
