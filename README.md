@@ -1,5 +1,5 @@
 
-# Pincipal Component Analysis in scikit-learn - Lab
+# Principal Component Analysis in scikit-learn - Lab
 
 ## Introduction
 
