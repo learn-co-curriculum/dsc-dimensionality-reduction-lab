@@ -126,9 +126,9 @@ pd.plotting.scatter_matrix(df, figsize=(10,10));
 ```python
 # Create features and Target dataset
 from sklearn.preprocessing import StandardScaler
-features = ['sepal length', 'sepal width', 'petal length', 'petal width']
-X = iris.loc[:, features].values
-y = iris.loc[:,['target']].values
+features = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+X = df[features].values
+y = df['Target'].values
 ```
 
   
