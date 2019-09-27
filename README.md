@@ -191,7 +191,7 @@ df.head()
 
 
 
-In a minute, you'll perform PCA and visualize the datasets principle components. Before, its helpful to get a little more context regarding the data that you'll be working with. Run the cell below in order to visualize the pairwise feature plots. With this, notice how the target labels are easily separable by any one of the given features.
+In a minute, you'll perform PCA and visualize the datasets principal components. Before, it's helpful to get a little more context regarding the data that you'll be working with. Run the cell below in order to visualize the pairwise feature plots. With this, notice how the target labels are easily separable by any one of the given features.
 
 
 ```python
@@ -227,8 +227,7 @@ pd.plotting.scatter_matrix(df, figsize=(10,10));
 # Create features and Target dataset
 
 
-# Your code here 
-
+# Your code here
 
 ```
 
@@ -250,7 +249,6 @@ y = df['Target'].values
 
 
 # Your code here 
-
 
 ```
 
@@ -275,47 +273,47 @@ y = df['Target'].values
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal length</th>
-      <th>sepal width</th>
-      <th>petal length</th>
-      <th>petal width</th>
+      <th>sepal length (cm)</th>
+      <th>sepal width (cm)</th>
+      <th>petal length (cm)</th>
+      <th>petal width (cm)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>-0.900681</td>
-      <td>1.032057</td>
-      <td>-1.341272</td>
-      <td>-1.312977</td>
+      <td>1.019004</td>
+      <td>-1.340227</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>1</th>
       <td>-1.143017</td>
-      <td>-0.124958</td>
-      <td>-1.341272</td>
-      <td>-1.312977</td>
+      <td>-0.131979</td>
+      <td>-1.340227</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>2</th>
       <td>-1.385353</td>
-      <td>0.337848</td>
-      <td>-1.398138</td>
-      <td>-1.312977</td>
+      <td>0.328414</td>
+      <td>-1.397064</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>3</th>
       <td>-1.506521</td>
-      <td>0.106445</td>
-      <td>-1.284407</td>
-      <td>-1.312977</td>
+      <td>0.098217</td>
+      <td>-1.283389</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>4</th>
       <td>-1.021849</td>
-      <td>1.263460</td>
-      <td>-1.341272</td>
-      <td>-1.312977</td>
+      <td>1.249201</td>
+      <td>-1.340227</td>
+      <td>-1.315444</td>
     </tr>
   </tbody>
 </table>
@@ -353,47 +351,47 @@ pd.DataFrame(data = X, columns = features).head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal length</th>
-      <th>sepal width</th>
-      <th>petal length</th>
-      <th>petal width</th>
+      <th>sepal length (cm)</th>
+      <th>sepal width (cm)</th>
+      <th>petal length (cm)</th>
+      <th>petal width (cm)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>-0.900681</td>
-      <td>1.032057</td>
-      <td>-1.341272</td>
-      <td>-1.312977</td>
+      <td>1.019004</td>
+      <td>-1.340227</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>1</th>
       <td>-1.143017</td>
-      <td>-0.124958</td>
-      <td>-1.341272</td>
-      <td>-1.312977</td>
+      <td>-0.131979</td>
+      <td>-1.340227</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>2</th>
       <td>-1.385353</td>
-      <td>0.337848</td>
-      <td>-1.398138</td>
-      <td>-1.312977</td>
+      <td>0.328414</td>
+      <td>-1.397064</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>3</th>
       <td>-1.506521</td>
-      <td>0.106445</td>
-      <td>-1.284407</td>
-      <td>-1.312977</td>
+      <td>0.098217</td>
+      <td>-1.283389</td>
+      <td>-1.315444</td>
     </tr>
     <tr>
       <th>4</th>
       <td>-1.021849</td>
-      <td>1.263460</td>
-      <td>-1.341272</td>
-      <td>-1.312977</td>
+      <td>1.249201</td>
+      <td>-1.340227</td>
+      <td>-1.315444</td>
     </tr>
   </tbody>
 </table>
@@ -429,7 +427,7 @@ principalComponents = pca.fit_transform(X)
 ```
 
 To visualize the components, it will be useful to also look at the target associated with the particular observation. 
-As such, append the target (flower name) to the principal components in a pandas dataframe.
+As such, append the target (flower type) to the principal components in a pandas dataframe.
 
 
 ```python
@@ -437,7 +435,6 @@ As such, append the target (flower name) to the principal components in a pandas
 
 
 # Your code here 
-
 
 ```
 
@@ -470,33 +467,33 @@ As such, append the target (flower name) to the principal components in a pandas
   <tbody>
     <tr>
       <th>0</th>
-      <td>-2.264542</td>
-      <td>0.505704</td>
-      <td>Iris-setosa</td>
+      <td>-2.264703</td>
+      <td>0.480027</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-2.086426</td>
-      <td>-0.655405</td>
-      <td>Iris-setosa</td>
+      <td>-2.080961</td>
+      <td>-0.674134</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-2.367950</td>
-      <td>-0.318477</td>
-      <td>Iris-setosa</td>
+      <td>-2.364229</td>
+      <td>-0.341908</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-2.304197</td>
-      <td>-0.575368</td>
-      <td>Iris-setosa</td>
+      <td>-2.299384</td>
+      <td>-0.597395</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-2.388777</td>
-      <td>0.674767</td>
-      <td>Iris-setosa</td>
+      <td>-2.389842</td>
+      <td>0.646835</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -510,7 +507,10 @@ As such, append the target (flower name) to the principal components in a pandas
 # Create a new dataset from principal components 
 df = pd.DataFrame(data = principalComponents
              , columns = ['PC1', 'PC2'])
-result_df = pd.concat([df, iris[['target']]], axis = 1)
+
+target = pd.Series(iris['target'], name='target')
+
+result_df = pd.concat([df, target], axis = 1)
 result_df.head(5)
 ```
 
@@ -543,33 +543,33 @@ result_df.head(5)
   <tbody>
     <tr>
       <th>0</th>
-      <td>-2.264542</td>
-      <td>0.505704</td>
-      <td>Iris-setosa</td>
+      <td>-2.264703</td>
+      <td>0.480027</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-2.086426</td>
-      <td>-0.655405</td>
-      <td>Iris-setosa</td>
+      <td>-2.080961</td>
+      <td>-0.674134</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-2.367950</td>
-      <td>-0.318477</td>
-      <td>Iris-setosa</td>
+      <td>-2.364229</td>
+      <td>-0.341908</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-2.304197</td>
-      <td>-0.575368</td>
-      <td>Iris-setosa</td>
+      <td>-2.299384</td>
+      <td>-0.597395</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-2.388777</td>
-      <td>0.674767</td>
-      <td>Iris-setosa</td>
+      <td>-2.389842</td>
+      <td>0.646835</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -577,7 +577,7 @@ result_df.head(5)
 
 
 
-Great, you now have a set of two dimensions, reduced from four against our target variable, the flower name.
+Great, you now have a set of two dimensions, reduced from four against our target variable, the flower type.
 
 ## Visualize Principal Components 
 
@@ -590,6 +590,7 @@ Using the target data, we can visualize the principal components according to th
 
 
 # Your code here 
+
 ```
 
 
@@ -607,8 +608,7 @@ ax.set_xlabel('First Principal Component ', fontsize = 15)
 ax.set_ylabel('Second Principal Component ', fontsize = 15)
 ax.set_title('Principal Component Analysis (2PCs) for Iris Dataset', fontsize = 20)
 
-
-targets = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+targets = [0, 1, 2]
 colors = ['r', 'g', 'b']
 for target, color in zip(targets,colors):
     indicesToKeep = iris['target'] == target
@@ -636,12 +636,11 @@ You can see above that the three classes in the dataset are fairly well separabl
 
 # Your code here 
 
-
 ```
 
-    Variance of each component: [0.72770452 0.23030523]
+    Variance of each component: [0.72962445 0.22850762]
     
-     Total Variance Explained: 95.8
+     Total Variance Explained: 95.81
 
 
 
@@ -652,20 +651,20 @@ print('Variance of each component:', pca.explained_variance_ratio_)
 print('\n Total Variance Explained:', round(sum(list(pca.explained_variance_ratio_))*100, 2))
 ```
 
-    Variance of each component: [0.72770452 0.23030523]
+    Variance of each component: [0.72962445 0.22850762]
     
-     Total Variance Explained: 95.8
+     Total Variance Explained: 95.81
 
 
 As you should see, these first two principal components account for the vast majority of the overall variance in the dataset. This is indicative of the total information encapsulated in the compressed representation compared to the original encoding.
 
-## Compare Performance of an Classifier with PCA
+## Compare Performance of a Classifier with PCA
 
 Since the principal components explain 95% of the variance in the data, it is interesting to consider how a classifier trained on the compressed version would compare to one trained on the original dataset.
 
 - Run a `KNeighborsClassifier` to classify the Iris dataset 
-- Use a trai/test split of 80/20
-- For reproducability of results, set random state =9 for the split
+- Use a train/test split of 80/20
+- For reproducibility of results, set `random state = 9` for the split
 - Time the process for splitting, training and making prediction
 
 
@@ -674,47 +673,44 @@ Since the principal components explain 95% of the variance in the data, it is in
 
 # Your code here 
 
-
 ```
 
     Accuracy: 1.0
-    Time Taken: 0.0017656260024523363
+    Time Taken: 0.0025620460510253906
 
 
 
 ```python
 # __SOLUTION__ 
-from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
-import timeit
+import time
 
 
-X = iris[['sepal length','sepal width','petal length','petal width']]
+X = iris.data
 y = iris.target
-y = preprocessing.LabelEncoder().fit_transform(y)
-start = timeit.timeit()
+start = time.time()
 X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=9)
 model = KNeighborsClassifier()
 model.fit(X_train, Y_train)
 Yhat = model.predict(X_test)
 acc = metrics.accuracy_score(Yhat, Y_test)
-end = timeit.timeit()
+end = time.time()
 print("Accuracy:",acc)
 print ("Time Taken:", end - start)
 ```
 
     Accuracy: 1.0
-    Time Taken: -7.582898251712322e-05
+    Time Taken: 0.0024881362915039062
 
 
 Great , so you can see that we are able to classify the data with 100% accuracy in the given time. Remember the time taken may different randomly based on the load on your cpu and number of processes running on your PC. 
 
 Now repeat the above process for dataset made from principal components 
 - Run a `KNeighborsClassifier` to classify the Iris dataset with principal components
-- Use a trai/test split of 80/20
-- For reproducability of results, set random state =9 for the split
+- Use a train/test split of 80/20
+- For reproducibility of results, set random state =9 for the split
 - Time the process for splitting, training and making prediction
 
 
@@ -724,11 +720,10 @@ Now repeat the above process for dataset made from principal components
 
 # Your code here 
 
-
 ```
 
     Accuracy: 0.9666666666666667
-    Time Taken: 0.00035927799763157964
+    Time Taken: 0.0049571990966796875
 
 
 
@@ -736,31 +731,35 @@ Now repeat the above process for dataset made from principal components
 # __SOLUTION__ 
 # Run the classifer on PCA'd data
 X = result_df[['PC1', 'PC2']]
-y = iris.target
-y = preprocessing.LabelEncoder().fit_transform(y)
+y = result_df['target']
 
-start = timeit.timeit()
+start = time.time()
 X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=9)
 model = KNeighborsClassifier()
 model.fit(X_train, Y_train)
 Yhat = model.predict(X_test)
 acc = metrics.accuracy_score(Yhat, Y_test)
-end = timeit.timeit()
+end = time.time()
 print("Accuracy:",acc)
 print ("Time Taken:", end - start)
 ```
 
     Accuracy: 0.9666666666666667
-    Time Taken: -0.0027275790052954108
+    Time Taken: 0.00533294677734375
 
 
-While some accuracy is loss in this representation, the training time has vastly improved. In more complex cases, PCA can even improve the accuracy of some machine learning tasks. In particular, PCA can be useful to reduce overfitting.
+Although some accuracy is lost in this representation of the data, we were able to use half of the number of features to train the model!
 
-  
+In more complex cases, PCA can even improve the accuracy of some machine learning tasks. In particular, PCA can be useful to reduce overfitting.
+
+## Visualize the learned decision boundary 
+
+Run the cell below to visualize the decision boundary learned by the k-nearest neighbor classification model trained using the principal components of the data. 
 
 
 ```python
 # Plot decision boundary using principal components 
+import numpy as np 
 def decision_boundary(pred_func):
     
     #Set the boundary
@@ -780,24 +779,18 @@ def decision_boundary(pred_func):
 
 decision_boundary(lambda x: model.predict(x))
 
-plt.title("decision boundary")
+plt.title("decision boundary");
 ```
 
 
-
-
-    Text(0.5,1,'decision boundary')
-
-
-
-
-![png](index_files/index_37_1.png)
+![png](index_files/index_37_0.png)
 
 
 
 ```python
 # __SOLUTION__ 
 # Plot decision boundary using principal components 
+import numpy as np
 def decision_boundary(pred_func):
     
     #Set the boundary
@@ -817,18 +810,11 @@ def decision_boundary(pred_func):
 
 decision_boundary(lambda x: model.predict(x))
 
-plt.title("decision boundary")
+plt.title("decision boundary");
 ```
 
 
-
-
-    Text(0.5,1,'decision boundary')
-
-
-
-
-![png](index_files/index_38_1.png)
+![png](index_files/index_38_0.png)
 
 
 ## Summary 
