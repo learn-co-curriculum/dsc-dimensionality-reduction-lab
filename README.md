@@ -1,4 +1,3 @@
-
 # Principal Component Analysis in scikit-learn - Lab
 
 ## Introduction
@@ -9,7 +8,7 @@ Now that you've seen a brief introduction to PCA, it's time to use scikit-learn 
 
 In this lab you will: 
 
-- Implement the PCA algorithm using scikit-learn library 
+- Implement PCA using the scikit-learn library 
 - Determine the optimal number of n components when performing PCA by observing the explained variance 
 - Plot the decision boundary of classification experiments to visually inspect their performance 
 
@@ -378,7 +377,7 @@ Great, you now have a set of two dimensions, reduced from four against our targe
 ## Visualize Principal Components 
 
 Using the target data, we can visualize the principal components according to the class distribution. 
-- Create a scatter plot from principal components while color coding the examples
+- Create a scatter plot from principal components while color coding the examples according to what flower type each example is classified as
 
 
 ```python
@@ -419,7 +418,7 @@ ax.grid()
 ## Explained Variance
 
 
-You can see above that the three classes in the dataset are fairly well separable. As such, this compressed representation of the data is probably sufficient for the classification task at hand. Compare the variance in the overall dataset to that captured from your two primary components.
+You can see above that the three classes in the dataset are fairly well separable. As such, this compressed representation of the data is probably sufficient for the classification task at hand. Compare the variance in the overall dataset to what was captured from your two primary components.
 
 
 ```python
@@ -449,8 +448,8 @@ Since the principal components explain 95% of the variance in the data, it is in
 
 - Run a `KNeighborsClassifier` to classify the Iris dataset 
 - Use a train/test split of 80/20
-- For reproducibility of results, set `random_state=9` for the split
-- Time the process for splitting, training and making prediction
+- For the reproducibility of results, set `random_state=9` for the split
+- Time the process for splitting, training and making predictions
 
 
 ```python
@@ -485,14 +484,14 @@ print ('Time Taken:', end - start)
     Time Taken: 0.004793882369995117
 
 
-Great, so you can see that we are able to classify the data with 100% accuracy in the given time. Remember the time taken may be different based on the load on your cpu and number of processes running on your PC. 
+Great, so you can see that we are able to classify the data with 100% accuracy in the given time. Remember the time taken may be different based on the load on your CPU and number of processes running on your machine. 
 
-Now repeat the above process for dataset made from principal components: 
+Now repeat the above process for the dataset made from principal components: 
 
 - Run a `KNeighborsClassifier` to classify the Iris dataset with principal components
 - Use a train/test split of 80/20
-- For reproducibility of results, set `random_state=9` for the split
-- Time the process for splitting, training and making prediction
+- For the reproducibility of results, set `random_state=9` for the split
+- Time the process for splitting, training and making predictions
 
 
 ```python
@@ -527,7 +526,7 @@ Although some accuracy is lost in this representation of the data, we were able 
 
 In more complex cases, PCA can even improve the accuracy of some machine learning tasks. In particular, PCA can be useful to reduce overfitting.
 
-## Visualize the learned decision boundary 
+## Visualize the Learned Decision Boundary 
 
 Run the cell below to visualize the decision boundary learned by the k-nearest neighbor classification model trained using the principal components of the data. 
 
@@ -590,4 +589,4 @@ plt.title('decision boundary');
 
 ## Summary 
 
-In this lab you applied PCA to the popular Iris dataset. You looked at performance of a simple classifier and impact of PCA on it. From here, you'll continue to explore PCA at more fundamental levels.
+In this lab, you applied PCA to the popular Iris dataset. You looked at the performance of a simple classifier and the impact of PCA on the accuracy of the model and the time it took to run the model. From here, you'll continue to explore PCA at more fundamental levels.
