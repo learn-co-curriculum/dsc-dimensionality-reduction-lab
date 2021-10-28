@@ -1,4 +1,4 @@
-# Dimensionality Reduction - Lab
+# Dimensionality Reduction - Cumulative Lab
 
 ## Introduction
 
