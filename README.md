@@ -157,7 +157,9 @@ fig.suptitle("Feature Distributions by Iris Type");
 ```
 
 
+    
 ![png](index_files/index_5_0.png)
+    
 
 
 ### Requirements
@@ -724,7 +726,9 @@ ax.legend(iris.target_names, fontsize="large");
 ```
 
 
+    
 ![png](index_files/index_30_0.png)
+    
 
 
 ### Explained Variance
@@ -857,7 +861,9 @@ ax.legend(iris.target_names, fontsize=15);
 ```
 
 
+    
 ![png](index_files/index_40_0.png)
+    
 
 
 ## BONUS: Manifold Dimensionality Reduction
@@ -951,7 +957,9 @@ ax.legend(iris.target_names, fontsize=15);
 ```
 
 
+    
 ![png](index_files/index_44_0.png)
+    
 
 
 ## Summary 
