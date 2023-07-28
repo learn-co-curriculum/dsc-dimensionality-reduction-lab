@@ -320,7 +320,6 @@ Notes:
 # Replace None with appropriate code
 
 # Set up figure and axes
-plt.style.use('seaborn-dark')
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.grid()
 
