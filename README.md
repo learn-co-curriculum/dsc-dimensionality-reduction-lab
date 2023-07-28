@@ -206,7 +206,9 @@ fig.suptitle("Feature Distributions by Iris Type");
 ```
 
 
+    
 ![png](index_files/index_7_0.png)
+    
 
 
 ### Requirements
@@ -922,7 +924,6 @@ Notes:
 # Replace None with appropriate code
 
 # Set up figure and axes
-plt.style.use('seaborn-dark')
 fig, ax = plt.subplots(figsize=(10, 8))
 ax.grid()
 
@@ -968,7 +969,9 @@ ax.legend(iris.target_names, fontsize="large");
 ```
 
 
+    
 ![png](index_files/index_44_0.png)
+    
 
 
 ### Explained Variance
@@ -1190,7 +1193,9 @@ ax.legend(iris.target_names, fontsize=15);
 ```
 
 
+    
 ![png](index_files/index_58_0.png)
+    
 
 
 ## BONUS: Manifold Dimensionality Reduction
@@ -1357,7 +1362,9 @@ ax.legend(iris.target_names, fontsize=15);
 ```
 
 
+    
 ![png](index_files/index_64_0.png)
+    
 
 
 ## Summary 
